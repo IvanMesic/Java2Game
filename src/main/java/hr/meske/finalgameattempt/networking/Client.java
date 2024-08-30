@@ -1,17 +1,25 @@
 package hr.meske.finalgameattempt.networking;
 
 import hr.meske.finalgameattempt.State.GameManager;
+import hr.meske.finalgameattempt.chat.ChatClient;
+import hr.meske.finalgameattempt.chat.ChatService;
 import javafx.application.Platform;
 
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.rmi.Naming;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 
 public class Client {
     private ClientSideConnection clientSideConnection;
-
+    private ChatService chatService;
+    private ChatClient chatClient;
     GameManager parent;
     private int clientID;
 
@@ -20,16 +28,43 @@ public class Client {
     }
 
     public void connectToServer() {
+
         clientSideConnection = new ClientSideConnection();
+
+        try {
+            chatService = (ChatService) Naming.lookup("rmi://localhost/ChatService");
+            chatClient = new ChatClientImpl();
+            chatService.registerClient(chatClient);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public int getClientID() {
         return clientID;
     }
 
+    public void sendMessageToChat(String username, String message) {
+        try {
+            chatService.sendMessage(username, message);
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+    }
 
     public  ClientSideConnection getClientSideConnection() {
         return clientSideConnection;
+    }
+
+    private class ChatClientImpl extends UnicastRemoteObject implements ChatClient {
+        protected ChatClientImpl() throws RemoteException {}
+
+        @Override
+        public void receiveMessage(String message) throws RemoteException {
+            Platform.runLater(() -> {
+                parent.displayChatMessage(message);
+            });
+        }
     }
 
     public class ClientSideConnection {

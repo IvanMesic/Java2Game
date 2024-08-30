@@ -1,0 +1,710 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<GameHistory>
+    <GameStates>
+        <GamePhaseIndex>1</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>1</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>2</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>2</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>3</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>3</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>1</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>1</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>2</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>2</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>3</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>2</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>3</gamePhaseIndex>
+    </GameStates>
+    <GameStates>
+        <GamePhaseIndex>1</GamePhaseIndex>
+        <SoldiersLeftToPlace>3</SoldiersLeftToPlace>
+        <SoldiersLeftToMove>2</SoldiersLeftToMove>
+        <AttacksRemaining>2</AttacksRemaining>
+        <CurrentPlayerTurn>1</CurrentPlayerTurn>
+        <BoardPieces id="0">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="1">
+            <BoardType>GREY</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="2">
+            <BoardType>BLACK</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="3">
+            <BoardType>ORANGE</BoardType>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>40</HP>
+                <Attack>30</Attack>
+                <Team>BLUE</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="4">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="5">
+            <BoardType>YELLOW</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="6">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="7">
+            <BoardType>RED</BoardType>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+            <Soldiers>
+                <HP>100</HP>
+                <Attack>30</Attack>
+                <Team>RED</Team>
+            </Soldiers>
+        </BoardPieces>
+        <BoardPieces id="8">
+            <BoardType>PURPLE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="9">
+            <BoardType>BLACK</BoardType>
+        </BoardPieces>
+        <BoardPieces id="10">
+            <BoardType>GREY</BoardType>
+        </BoardPieces>
+        <BoardPieces id="11">
+            <BoardType>ORANGE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="12">
+            <BoardType>GREEN</BoardType>
+        </BoardPieces>
+        <BoardPieces id="13">
+            <BoardType>YELLOW</BoardType>
+        </BoardPieces>
+        <BoardPieces id="14">
+            <BoardType>BLUE</BoardType>
+        </BoardPieces>
+        <BoardPieces id="15">
+            <BoardType>RED</BoardType>
+        </BoardPieces>
+        <gamePhaseIndex>1</gamePhaseIndex>
+    </GameStates>
+</GameHistory>

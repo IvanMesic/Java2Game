@@ -16,7 +16,13 @@ public class GameState implements Serializable {
     @XmlElement(name = "GamePhaseIndex")
     public int GamePhaseIndex = 1;
 
+    @XmlElement(name = "PointsRed")
+    public int pointsRed = 0;
 
+    @XmlElement(name = "PointsBlue")
+    public int pointsBlue = 0;
+
+    public List<String> turnActionLog = new ArrayList<>();
     public int getGamePhaseIndex() {
         return GamePhaseIndex;
     }
@@ -44,6 +50,19 @@ public class GameState implements Serializable {
         return boardPieces;
     }
 
+    public boolean checkWin() {
+        return pointsRed >= 20 || pointsBlue >= 20;
+    }
+
+    public String getWinningTeam() {
+        if (pointsRed >= 20) {
+            return "Red";
+        } else if (pointsBlue >= 20) {
+            return "Blue";
+        }
+        return null;
+    }
+
     public void addSoldier(int boardPieceId, Soldier soldier) {
         boardPieces.get(boardPieceId).addSoldier(soldier);
     }
@@ -51,11 +70,9 @@ public class GameState implements Serializable {
     public GameState() {
     }
 
-    public void initBoard() {
-    }
 
 
-    public void SetBoards() {
+    public void setBoards() {
         boardPieces.add(new BoardPiece(0,  BoardType.PURPLE));
         boardPieces.add(new BoardPiece(1,  BoardType.GREY));
         boardPieces.add(new BoardPiece(2,  BoardType.BLACK));

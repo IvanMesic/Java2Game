@@ -1,37 +1,57 @@
 package hr.meske.finalgameattempt;
 
+import hr.meske.finalgameattempt.State.GameHistory;
 import hr.meske.finalgameattempt.State.GameManager;
 import hr.meske.finalgameattempt.State.GameState;
 import hr.meske.finalgameattempt.model.BoardPiece;
 import hr.meske.finalgameattempt.model.Soldier;
 import hr.meske.finalgameattempt.model.Team;
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class HelloController {
 
 
     SerializationController serializationController = new SerializationController();
+    private ObservableList<String> hpInfoLogs = FXCollections.observableArrayList();
 
+    @FXML
+    private TextArea chatTextArea;  // TextArea to display chat messages
+    @FXML
+    private TextField chatInputField;
+    @FXML
+    private Label hpInfoTitle;
+    @FXML
+    private ListView<String> hpInfoListView;
     private int subTurn = 1;
     private int firstBoardPieceSelected;
     private Map<Integer, FlowPane> boardPieceToFlowPaneMap;
+    private ObservableList<String> displayedLogs = FXCollections.observableArrayList();
 
     GameManager gameManager = null;
     public void setGameManager(GameManager gameManager) {
         this.gameManager = gameManager;
-        gameManager.getGameState().SetBoards();
+        gameManager.getGameState().setBoards();
     }
 
     public void initialize() {
@@ -58,11 +78,14 @@ public class HelloController {
         boardPieceToFlowPaneMap.put(13, fpYellowTwo);
         boardPieceToFlowPaneMap.put(14, fpBlueTwo);
         boardPieceToFlowPaneMap.put(15, fpRedTwo);
+        hpInfoListView.setItems(hpInfoLogs);
+        initializeScrollHandlers();
     }
 
     @FXML
     private VBox mainVBox;
-
+    @FXML
+    private ListView<String> logListView;
     @FXML
     private AnchorPane mainAnchorPane;
     @FXML
@@ -119,6 +142,16 @@ public class HelloController {
     @FXML
     private TextArea textArea;
 
+    @FXML
+    private Label scoreRedLabel;
+
+    @FXML
+    private Label scoreBlueLabel;
+
+    public void updateScores() {
+        scoreRedLabel.setText("Red Team: " + gameManager.getGameState().pointsRed + " points");
+        scoreBlueLabel.setText("Blue Team: " + gameManager.getGameState().pointsBlue + " points");
+    }
 
     public void setTextArea(String text) {
         welcomeText.setText(text);
@@ -128,6 +161,35 @@ public class HelloController {
 
 
     }
+
+    private void initializeScrollHandlers() {
+        for (Map.Entry<Integer, FlowPane> entry : boardPieceToFlowPaneMap.entrySet()) {
+            entry.getValue().setOnScroll(event -> onFlowPaneScrolled(event, entry.getKey()));
+        }
+    }
+
+    private void onFlowPaneScrolled(ScrollEvent event, int boardPieceId) {
+
+
+
+        // Update the title with the board piece ID
+        hpInfoTitle.setText("Board Piece ID: " + boardPieceId);
+
+        // Clear the previous list
+        hpInfoLogs.clear();
+
+        // Get the list of soldiers on the specified board piece
+        List<Soldier> soldiers = gameManager.getGameState().getBoardPieces().get(boardPieceId).getSoldiers();
+
+        // Add each soldier's information to the hpInfoLogs list
+        soldiers.forEach(soldier -> {
+            hpInfoLogs.add("HP: " + soldier.getHp() + ", Attack: " + soldier.getAttack() + ", Team: " + (soldier.getTeam() == Team.RED ? "Red" : "Blue"));
+        });
+
+        // Update the ListView with the new information
+        Platform.runLater(() -> hpInfoListView.setItems(hpInfoLogs));
+    }
+
 
     @FXML
     public void onBtnSaveGameClicked() {
@@ -151,6 +213,7 @@ public class HelloController {
         dialog.showAndWait().ifPresent(selectedFile -> {
             GameState loadedGameState = serializationController.loadGameStateFromXML(selectedFile.getAbsolutePath());
             if (loadedGameState != null) {
+                loadedGameState.setBoards();
                 gameManager.setGameState(loadedGameState);
                 drawBoard();
                 try {
@@ -165,6 +228,10 @@ public class HelloController {
         });
     }
     public void onFlowPanePressed(MouseEvent event) throws IOException {
+
+        if (gameManager.getGameState().currentPlayerTurn != gameManager.getClientId()) {
+            return;
+        }
 
         FlowPane flowPane = (FlowPane) event.getSource();
         String id = flowPane.getId();
@@ -213,22 +280,42 @@ public class HelloController {
 
             int damage = attackingSoldiersAttack / numberOfDefendingSoldiers;
 
-            gameManager.getGameState().getBoardPieces().get(boardPieceId).getSoldiers().forEach(soldier -> {
-                soldier.deduceHP(damage);
-            });
+            int soldiersKilled = 0;
+
+            for (Soldier soldier1 : gameManager.getGameState().getBoardPieces().get(boardPieceId).getSoldiers()) {
+                soldier1.deduceHP(damage);
+                if (soldier1.getHp() <= 0) {
+                    soldiersKilled++;
+                }
+            }
 
             for (BoardPiece boardPiece : gameManager.getGameState().getBoardPieces()) {
                 boardPiece.getSoldiers().removeIf(soldier -> soldier.getHp() <= 0);
+            }
+
+            if (soldiersKilled > 0) {
+                if (gameManager.getGameState().currentPlayerTurn == 1) {
+                    gameManager.getGameState().pointsRed += soldiersKilled;
+                } else {
+                    gameManager.getGameState().pointsBlue += soldiersKilled;
+                }
             }
 
             gameManager.getGameState().getBoardPieces().get(boardPieceId).getSoldiers().forEach(soldier -> {
                 System.out.println(soldier.getHp());
             });
 
+
+
             subTurn = 1;
             gameManager.getGameState().attackRemaining--;
 
-            showAlert("Attack Completed", "You have " + gameManager.getGameState().attackRemaining + " attacks remaining.");
+            handleWinCondition();
+
+            if (!gameManager.getGameState().checkWin()) {
+                updateTurnAction("Attacked", getFieldName(firstBoardPieceSelected), getFieldName(boardPieceId));
+                syncLogsWithListView();
+            }
         }
     }
 
@@ -259,9 +346,13 @@ public class HelloController {
             gameManager.getGameState().getBoardPieces().get(firstBoardPieceSelected).getSoldiers().clear();
             gameManager.getGameState().soldiersLeftToMove--;
             subTurn = 1;
+            updateTurnAction("Moved", getFieldName(firstBoardPieceSelected),getFieldName(boardPieceId) );
+            syncLogsWithListView();
 
         }
     }
+
+
 
     private void addSoldier(int boardPieceId) {
 
@@ -277,7 +368,8 @@ public class HelloController {
         }
         gameManager.getGameState().addSoldier(boardPieceId, new Soldier(gameManager.getGameState().currentPlayerTurn == 1 ? Team.RED : Team.BLUE));
         gameManager.getGameState().soldiersLeftToPlace--;
-
+        updateTurnAction("Added", getFieldName(boardPieceId),"" );
+        syncLogsWithListView();
     }
 
     public void drawBoard() {
@@ -289,6 +381,9 @@ public class HelloController {
                 flowPane.getChildren().add(new Label(emoji));
             }
         }
+
+        syncLogsWithListView();
+        updateScores();
     }
 
     public void onBtnPlayClicked(MouseEvent event) throws IOException {
@@ -349,9 +444,82 @@ public class HelloController {
         btnAttack.setDisable(true);
         btnPlay.setDisable(true);
     }
+    public void updateTurnAction(String gamePhase, String firstField, String secondField) {
+        String team = gameManager.getGameState().currentPlayerTurn == 1 ? "Red" : "Blue";
+        String logMessage;
+
+        if (gamePhase.equals("Attacked") || gamePhase.equals("Moved")) {
+            logMessage = "Client " + team + " " + gamePhase + " soldiers from field " + firstField + " to " + secondField;
+        } else {
+            logMessage = "Client " + team + " Added Soldiers to " + firstField + " field.";
+        }
+
+        gameManager.getGameState().turnActionLog.add(logMessage);
+
+    }
+
+    public String getFieldName(int id) {
+        FlowPane flowPane = boardPieceToFlowPaneMap.get(id);
+        return (flowPane != null) ? flowPane.getId() : "Unknown Field";
+    }
+
+    private void syncLogsWithListView() {
+        Platform.runLater(() -> {
+            displayedLogs.clear();
+            displayedLogs.addAll(gameManager.getGameState().turnActionLog);
+            logListView.setItems(displayedLogs);
+        });
+    }
 
     public void onFlowPaneReleased(MouseEvent event) {
 
         drawBoard();
+    }
+
+    public void onSaveGameHistoryClicked(ActionEvent event) {
+        GameHistory gameHistory = gameManager.getGameHistory();
+        if (gameHistory != null) {
+            serializationController.saveGameHistoryToXML(gameHistory);
+            showAlert("Save Successful", "Game history saved successfully.");
+        } else {
+            showAlert("Save Failed", "No game history available to save.");
+        }
+    }
+
+
+    public void onLoadReplayClicked(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ReplayBoard.fxml"));
+            Parent replayRoot = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Replay Board");
+            stage.setScene(new Scene(replayRoot));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert("Load Failed", "Failed to load the replay board.");
+        }
+    }
+
+    @FXML
+    public void onSendChatMessage() {
+        String message = chatInputField.getText();
+        if (!message.trim().isEmpty()) {
+            gameManager.sendChatMessage(message);
+            chatInputField.clear();
+        }
+    }
+
+    public void handleWinCondition() {
+        if (gameManager.getGameState().checkWin()) {
+            String winningTeam = gameManager.getGameState().getWinningTeam();
+            addChatMessage("Game Over: " + winningTeam + " team wins!");
+            disableButtons();
+        }
+    }
+
+    public void addChatMessage(String message) {
+        Platform.runLater(() -> chatTextArea.appendText(message + "\n"));
     }
 }

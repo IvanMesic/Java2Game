@@ -16,6 +16,12 @@ public class GameManager {
 
     SerializationController serializationController = new SerializationController();
 
+    GameHistory gameHistory;
+
+    public GameHistory getGameHistory(){
+        return  gameHistory;
+    }
+
     HelloController helloController = null;
 
     public void setHelloController(HelloController helloController) {
@@ -24,9 +30,14 @@ public class GameManager {
     Client client;
     GameState state;
 
+    public int getClientId(){
+        return client.getClientID();
+    }
+
     public GameManager() {
         client = new Client(this);
         client.connectToServer();
+        gameHistory = new GameHistory();
         state = new GameState();
     }
     public GameState getGameState() {
@@ -46,9 +57,7 @@ public class GameManager {
         System.out.println("Sent to server");
     }
 
-
     public void recieveFromServer(byte[] data) throws IOException {
-
 
         state = serializationController.deserializeAndLoad(data);
 
@@ -58,9 +67,8 @@ public class GameManager {
             helloController.enableButtons();
         }
 
-
         helloController.drawBoard();
-
+        helloController.handleWinCondition();
 
         System.out.println("Received from server");
 
@@ -91,10 +99,25 @@ public class GameManager {
 
     }
 
-
     public void resetCounters() {
         getGameState().attackRemaining = 2;
         getGameState().soldiersLeftToPlace = 3;
         getGameState().soldiersLeftToMove = 2;
+
+        saveGameStateAfterTurn();
+
+    }
+    private void saveGameStateAfterTurn() {
+
+        gameHistory.addTurn(state);
+    }
+
+    public void sendChatMessage(String message) {
+        String username = client.getClientID() == 1 ? "Player 1" : "Player 2";
+        client.sendMessageToChat(username, message);
+    }
+
+    public void displayChatMessage(String message) {
+        helloController.addChatMessage(message);
     }
 }

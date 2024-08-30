@@ -1,10 +1,15 @@
 package hr.meske.finalgameattempt.networking;
 
+import hr.meske.finalgameattempt.chat.ChatService;
+import hr.meske.finalgameattempt.chat.ChatServiceImpl;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class Server {
@@ -17,6 +22,10 @@ public class Server {
         try {
             serverSocket = new ServerSocket(SERVER_PORT);
             System.out.println("Server started on port " + SERVER_PORT);
+            LocateRegistry.createRegistry(1099);
+            ChatService chatService = new ChatServiceImpl();
+            Naming.rebind("ChatService", chatService);
+            System.out.println("ChatService is bound in RMI registry");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,44 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Polygon?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="676.0" prefWidth="1171.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.meske.finalgameattempt.HelloController">
+<?import javafx.scene.control.Label?>
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hr.meske.finalgameattempt.ReplayController" prefHeight="676.0" prefWidth="930.0">
     <children>
-        <MenuBar prefHeight="27.0" prefWidth="773.0">
-            <menus>
-                <Menu mnemonicParsing="false" text="File">
-                    <items>
-                        <MenuItem mnemonicParsing="false" onAction="#onSaveGameHistoryClicked" text="Save Game History" />
-                        <MenuItem mnemonicParsing="false" onAction="#onLoadReplayClicked" text="Load Replay" />
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Edit">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="Delete" />
-                    </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Help">
-                    <items>
-                        <MenuItem mnemonicParsing="false" text="About" />
-                    </items>
-                </Menu>
-            </menus>
-        </MenuBar>
         <AnchorPane prefHeight="606.0" prefWidth="922.0">
             <children>
                 <Polygon fx:id="waterOne" fill="DODGERBLUE" layoutX="328.0" layoutY="149.0" points="-166.00003051757812, 2.1999969482421875, -142.80001831054688, -71.4000015258789, -76.0, -71.39999389648438, -54.800018310546875, -100.20001220703125, -91.60000610351562, -100.20001220703125, -157.20001220703125, -93.0, -240.4000244140625, 92.60002136230469, -215.60000610351562, 100.60002136230469, -198.80001831054688, 100.60002136230469, -172.4000244140625, 92.60002136230469, -186.80001831054688, 61.40000915527344" stroke="BLACK" strokeType="INSIDE" />
@@ -72,36 +43,23 @@
                 <FlowPane fx:id="fpGreenOne" layoutX="88.0" layoutY="242.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="51.0" prefWidth="174.0" />
                 <FlowPane fx:id="fpPurpleTwo" layoutX="100.0" layoutY="324.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="144.0" prefWidth="105.0" />
                 <FlowPane fx:id="fpBlackTwo" layoutX="220.0" layoutY="302.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="130.0" prefWidth="72.0" />
-                <FlowPane fx:id="fpGreyTwo" layoutX="313.0" layoutY="300.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="113.0" prefWidth="105.0" />
+                <FlowPane fx:id="fpGreyTwo" layoutX="313.0" layoutY="300.0" onMousePressed="#onFlowPanePressed"  onMouseReleased="#onFlowPaneReleased" prefHeight="113.0" prefWidth="105.0" />
                 <FlowPane fx:id="fpRedTwo" layoutX="412.0" layoutY="417.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="137.0" prefWidth="106.0" />
                 <FlowPane fx:id="fpBlueTwo" layoutX="304.0" layoutY="422.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="113.0" prefWidth="105.0" />
                 <FlowPane fx:id="fpGreyOne" layoutX="373.0" layoutY="52.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="113.0" prefWidth="105.0" />
                 <FlowPane fx:id="fpOrangeTwo" layoutX="420.0" layoutY="298.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="99.0" prefWidth="106.0" />
                 <FlowPane fx:id="fpGreenTwo" layoutX="38.0" layoutY="491.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="59.0" prefWidth="174.0" />
                 <FlowPane fx:id="fpYellowTwo" layoutX="214.0" layoutY="444.0" onMousePressed="#onFlowPanePressed" onMouseReleased="#onFlowPaneReleased" prefHeight="99.0" prefWidth="84.0" />
-                <Button fx:id="btnSaveGame" layoutX="720.0" layoutY="20.0" onMouseClicked="#onBtnSaveGameClicked" text="Save Game" />
-                <Button fx:id="btnLoadGame" layoutX="720.0" layoutY="270.0" onMouseClicked="#onBtnLoadGameClicked" text="Load Game" />
-                <Button fx:id="btnPlay" layoutX="820.0" layoutY="243.0" mnemonicParsing="false" onMouseClicked="#onBtnPlayClicked" prefHeight="25.0" prefWidth="78.0" text="End Turn" />
-                <Button fx:id="btnAddSoldier" layoutX="816.0" layoutY="71.0" mnemonicParsing="false" onMouseClicked="#onBtnAddSoldierClicked" text="Add Soldier" />
-                <Button fx:id="btnAttack" layoutX="817.0" layoutY="137.0" mnemonicParsing="false" onMouseClicked="#onBtnAttackClicked" prefHeight="25.0" prefWidth="78.0" text="Attack" />
-                <Button fx:id="btnMove" layoutX="816.0" layoutY="196.0" mnemonicParsing="false" onMouseClicked="#onBtnMoveSoldierClicked" text="Move Soldier" />
-                <ListView fx:id="logListView" layoutX="720.0" layoutY="310.0" prefHeight="300.0" prefWidth="200.0" />
-                <Label fx:id="hpInfoTitle" layoutX="500.0" layoutY="280.0" text="Board Piece Info" />
-                <ListView fx:id="hpInfoListView" layoutX="500.0" layoutY="310.0" prefHeight="300.0" prefWidth="200.0" />
-                <TextArea fx:id="chatTextArea" editable="false" layoutX="940.0" layoutY="309.0" prefHeight="200.0" prefWidth="186.0" />
-                <Label fx:id="scoreRedLabel" layoutX="992.0" layoutY="157.0" text="Red Team: 0 points" />
-                <Label fx:id="scoreBlueLabel" layoutX="991.0" layoutY="229.0" text="Blue Team: 0 points" />
-                <HBox />
-                 <TextField fx:id="chatInputField" layoutX="940.0" layoutY="510.0" prefHeight="25.0" prefWidth="140.0" />
-                 <Button layoutX="1081.0" layoutY="510.0" onAction="#onSendChatMessage" text="Send" />
+
+
+                <!-- Control buttons for replay functionality -->
+                <Button fx:id="btnLoadHistory" layoutX="720.0" layoutY="20.0" onMouseClicked="#onBtnLoadHistoryClicked" text="Load History" />
+                <Button fx:id="btnPrevious" layoutX="720.0" layoutY="70.0" onMouseClicked="#onBtnPreviousClicked" text="Previous" />
+                <Button fx:id="btnNext" layoutX="720.0" layoutY="120.0" onMouseClicked="#onBtnNextClicked" text="Next" />
+                <Button fx:id="btnPlay" layoutX="720.0" layoutY="170.0" onMouseClicked="#onBtnPlayClicked" text="Play" />
+                <Button fx:id="btnPause" layoutX="720.0" layoutY="220.0" onMouseClicked="#onBtnPauseClicked" text="Pause" />
+                <ListView fx:id="logListView" layoutX="720.0" layoutY="270.0" prefHeight="300.0" prefWidth="200.0"></ListView>
             </children>
         </AnchorPane>
-        <FlowPane prefHeight="144.0" prefWidth="90.0" />
-      <Accordion>
-        <panes>
-          <TitledPane animated="false" text="untitled 1" />
-          <TitledPane animated="false" text="untitled 2" />
-        </panes>
-      </Accordion>
     </children>
 </VBox>
